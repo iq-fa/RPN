@@ -48,3 +48,53 @@ function bandingkanAngka(angka1, angka2) {
   // ------------------------------------
   console.log('')
   // ------------------------------------
+
+  // Problem
+// Diberikan sebuah function konversiMenit(menit) yang menerima satu parameter berupa angka yang merupakan ukuran waktu 
+// dalam menit. Function akan me-return string waktu dalam format jam:menit berdasarkan menit tersebut. 
+// Contoh, jika menit adalah 63, maka function akan me-return "1:03".
+
+function konversiMenit(menit) {
+  let sisaMenit = menit % 60
+  let nolJam = "0" + Math.round(menit/60).toString()
+  // console.log(nolJam)
+  let jam = nolJam.slice(-2)  
+  let nolMenit = "0"+sisaMenit.toString()
+  let mnt = nolMenit.slice(-2)
+  return jam + ":" + mnt
+}
+
+// TEST CASES
+console.log(konversiMenit(63)); // 1:03
+console.log(konversiMenit(124)); // 2:04
+console.log(konversiMenit(53)); // 0:53
+console.log(konversiMenit(88)); // 1:28
+console.log(konversiMenit(120)); // 2:00
+
+// ------------------------------------
+console.log('')
+// ------------------------------------
+
+//   Problem
+//   Diberikan sebuah function xo(str) yang menerima satu parameter berupa string. 
+//   Function akan me-return true jika jumlah karakter x sama dengan jumlah karakter o, dan false jika tidak.
+
+function xo(str) {
+  let x = 0
+  let o = 0
+  for(let a = 0;a<str.length;a++){
+    if(str[a] == 'x'){
+      x +=1
+    } else if(str[a] == 'o') {
+      o +=1
+    }
+  }
+  return x == o
+}
+
+// TEST CASES
+console.log(xo('xoxoxo')); // true
+console.log(xo('oxooxo')); // false
+console.log(xo('oxo')); // false
+console.log(xo('xxxooo')); // true
+console.log(xo('xoxooxxo')); // true
