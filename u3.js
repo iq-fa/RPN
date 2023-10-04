@@ -111,7 +111,7 @@ function naikAngkot(arrPenumpang) {
         } else {
             // console.log(hs[students[s].class])
             // console.log(students[s].score)
-            if(hs[students[s].class]>students[s].score){
+            if(parseInt(hs[students[s].class].score)<parseInt(students[s].score)){
                 hs[students[s].class]['name'] = students[s].name
                 hs[students[s].class]['score'] = students[s].score
             }
@@ -119,7 +119,7 @@ function naikAngkot(arrPenumpang) {
     }
     return hs
   }
-  
+  console.log(100<90)
   // TEST CASE
   console.log(highestScore([
     {
@@ -183,7 +183,34 @@ function naikAngkot(arrPenumpang) {
   //   wolves: { name: 'Alisa', score: 76 },
   //   tigers: { name: 'Viktor', score: 80 }
   // }
+  // TEST CASE
+console.log(highestScore([
+    {
+      name: 'Dimitri',
+      score: 90,
+      class: 'foxes'
+    },
+    {
+      name: 'Alexei',
+      score: 85,
+      class: 'wolves'
+    },
+    {
+      name: 'Sergei',
+      score: 100,
+      class: 'foxes'
+    },
+    {
+      name: 'Anastasia',
+      score: 78,
+      class: 'wolves'
+    }
+  ]));
   
+  // {
+  //   foxes: { name: 'Sergei', score: 100 },
+  //   wolves: { name: 'Alexei', score: 85 }
+  // }
   
   console.log(highestScore([])); //{}
 
